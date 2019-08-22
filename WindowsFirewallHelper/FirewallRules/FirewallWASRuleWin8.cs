@@ -28,16 +28,36 @@ namespace WindowsFirewallHelper.FirewallRules
         {
         }
 
+		/// <summary>
+		/// Creates a new port rule for Windows Firewall with Advanced Security
+		/// </summary>
+		/// <param name="name">Name of the rule</param>
+		/// <param name="port">Port number of the rule</param>
+		/// <param name="action">Action that this rule defines</param>
+		/// <param name="direction">Data direction in which this rule applies to</param>
+		/// <param name="profiles">The profile that this rule belongs to</param>
+		/// <param name="protocol">The protocol.</param>
+		// ReSharper disable once TooManyDependencies
+		public FirewallWASRuleWin8(
+			string name,
+			ushort port,
+			FirewallAction action,
+			FirewallDirection direction,
+			FirewallProfiles profiles,
+			FirewallProtocol protocol) : base(name, port, action, direction, profiles, protocol)
+		{
+		}
+
         /// <summary>
-        ///     Creates a new port rule for Windows Firewall with Advanced Security
-        /// </summary>
-        /// <param name="name">Name of the rule</param>
-        /// <param name="port">Port number of the rule</param>
-        /// <param name="action">Action that this rule defines</param>
-        /// <param name="direction">Data direction in which this rule applies to</param>
-        /// <param name="profiles">The profile that this rule belongs to</param>
-        // ReSharper disable once TooManyDependencies
-        public FirewallWASRuleWin8(
+		///     Creates a new port rule for Windows Firewall with Advanced Security
+		/// </summary>
+		/// <param name="name">Name of the rule</param>
+		/// <param name="port">Port number of the rule</param>
+		/// <param name="action">Action that this rule defines</param>
+		/// <param name="direction">Data direction in which this rule applies to</param>
+		/// <param name="profiles">The profile that this rule belongs to</param>
+		// ReSharper disable once TooManyDependencies
+		public FirewallWASRuleWin8(
             string name,
             ushort port,
             FirewallAction action,

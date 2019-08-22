@@ -162,10 +162,14 @@ namespace WindowsFirewallHelper
             }
 
             if (FirewallWASRuleWin8.IsSupported)
-            {
-                return new FirewallWASRuleWin8(name, portNumber, action, FirewallDirection.Inbound,
-                        profiles)
-                    {Protocol = protocol};
+			{
+				return new FirewallWASRuleWin8(
+					name,
+					portNumber,
+					action,
+					FirewallDirection.Inbound,
+					profiles,
+					protocol);
             }
 
             if (FirewallWASRuleWin7.IsSupported)
